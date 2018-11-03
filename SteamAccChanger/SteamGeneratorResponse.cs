@@ -5,7 +5,7 @@ namespace SteamAccChanger
     internal class SteamGeneratorResponse
     {
         [JsonProperty("success")]
-        public int Success { get; set; }
+        public int Success { get; set; } = -1; //default value set to -1 for proper success checking after JSON deserialization
 
         [JsonProperty("username")]
         public string Username { get; set; }
@@ -15,5 +15,8 @@ namespace SteamAccChanger
 
         [JsonProperty("email")]
         public string EMail { get; set; }
+
+        [JsonProperty("error")]
+        public string ErrorMessage { get; set; }
     }
 }
